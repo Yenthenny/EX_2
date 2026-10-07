@@ -1,0 +1,162 @@
+================================================================================
+                    RESPUESTAS A LAS PREGUNTAS DEL PROYECTO
+================================================================================
+
+SESIÓN 3 - ANÁLISIS BÁSICO Y VISUALIZACIÓN
+────────────────────────────────────────────────────────────────────────────
+
+📊 DATOS PROCESADOS:
+  • Total de registros: 4,017 (después de filtrar valores inválidos)
+  • Período: Mayo 17, 2015 - Mayo 17, 2026 (11 años)
+  • Ubicación: Guayas, Ecuador (Lat: -2.1391, Lon: -79.5931)
+
+ESTADÍSTICAS DESCRIPTIVAS:
+  
+  TEMPERATURA (°C):
+    • Promedio: 23.31°C
+    • Desviación estándar: 1.07°C
+    • Mínima: 20.46°C
+    • Máxima: 27.45°C
+    • Rango intercuartílico (50%): 22.53°C - 24.05°C
+  
+  HUMEDAD RELATIVA (%):
+    • Promedio: 72.41%
+    • Desviación estándar: 10.48%
+    • Mínima: 43.12%
+    • Máxima: 94.34%
+    • Rango intercuartílico (50%): 63.69% - 81.74%
+
+────────────────────────────────────────────────────────────────────────────
+PREGUNTA 1: ¿EN QUÉ DÍAS HUBO MAYOR HUMEDAD?
+────────────────────────────────────────────────────────────────────────────
+
+✓ DÍA CON MÁXIMA HUMEDAD:
+  Fecha: 1 de marzo de 2025
+  Humedad Relativa: 94.34%
+  Temperatura: 22.43°C
+
+✓ TOP 5 DÍAS CON MAYOR HUMEDAD:
+  
+  1. 01/03/2025 → 94.34% de humedad
+  2. 23/03/2023 → 94.31% de humedad
+  3. 16/04/2026 → 94.02% de humedad
+  4. 28/03/2025 → 93.99% de humedad
+  5. 23/02/2026 → 93.88% de humedad
+
+OBSERVACIONES:
+  • La mayor humedad tiende a ocurrir en los meses de marzo y febrero
+  • Estos son típicamente meses de transición o estación lluviosa en Guayas
+  • La humedad máxima registrada es 94.34%, que indica una atmósfera muy saturada
+  • Los días de máxima humedad NO corresponden con temperaturas particularmente altas
+    (promedio 22.43°C), lo que sugiere que es por lluvia/nubosidad, no por calor
+
+────────────────────────────────────────────────────────────────────────────
+PREGUNTA 2: ¿HUBO ALGUNA CORRELACIÓN VISIBLE ENTRE TEMPERATURA Y HUMEDAD?
+────────────────────────────────────────────────────────────────────────────
+
+✓ ANÁLISIS ESTADÍSTICO:
+
+  Coeficiente de Correlación de Pearson: r = -0.6856
+  P-value: < 0.001 (altamente significativo)
+  
+  INTERPRETACIÓN: CORRELACIÓN NEGATIVA FUERTE
+
+  • La correlación de -0.6856 indica una RELACIÓN INVERSA FUERTE
+  • Esto significa: A MAYOR TEMPERATURA → MENOR HUMEDAD RELATIVA
+  • A MENOR TEMPERATURA → MAYOR HUMEDAD RELATIVA
+  • El p-value < 0.001 confirma que esta relación NO es al azar (es estadísticamente significativa)
+
+EXPLICACIÓN FÍSICA:
+  
+  1. RELACIÓN INVERSA NATURAL:
+     - El aire cálido tiene mayor capacidad de almacenar humedad absoluta
+     - Pero el concepto de "humedad RELATIVA" es el porcentaje respecto a esa capacidad
+     - A mayor temperatura: capacidad máxima ↑ → HR baja (aunque la humedad absoluta sea similar)
+     
+  2. PATRÓN EN GUAYAS:
+     - Días más fríos (20-22°C): Típicamente nublados, con HR 70-90%
+     - Días más cálidos (26-27°C): Típicamente soleados, con HR 50-70%
+     - Esta es la variación esperada en un clima tropical ecuatorial
+
+APLICACIÓN PRÁCTICA PARA RIEGO INTELIGENTE:
+  
+  ⚠️ Implicación crítica: Cuando la temperatura SUBE, la humedad BAJA
+  
+  Esto significa:
+  • Los días MÁS CALIENTES son los que MAYOR RIEGO REQUIEREN
+  • No podemos confiar solo en "humedad relativa" para decidir riego
+  • Necesitamos TAMBIÉN considerar:
+    - Humedad del SUELO (que es lo que realmente absorben las raíces)
+    - Temperatura (indicadora de evapotranspiración)
+    - Radiación solar (demanda evaporativa)
+  
+  ALGORITMO RECOMENDADO:
+    IF temperatura > 25°C AND humedad < 60% THEN
+      Necesidad de riego: CRÍTICA
+    IF temperatura > 24°C AND humedad < 70% THEN
+      Necesidad de riego: ALTA
+    IF temperatura < 23°C AND humedad > 75% THEN
+      Necesidad de riego: BAJA (esperar)
+
+────────────────────────────────────────────────────────────────────────────
+CONCLUSIONES DEL ANÁLISIS:
+────────────────────────────────────────────────────────────────────────────
+
+✅ Los datos de 11 años permiten:
+   1. Identificar patrones climáticos predecibles
+   2. Correlaciones claras entre variables
+   3. Alertas automáticas basadas en análisis estadísticos
+   4. Optimización de programación de riego
+
+✅ Puntos clave para la solución digital:
+   1. Usar la correlación T-HR como indicador de estrés hídrico
+   2. Implementar umbrales dinámicos según la época del año
+   3. Combinar HR atmosférica con humedad de suelo
+   4. Alertar cuando temperatura sube Y humedad baja simultáneamente
+
+✅ El archivo 'analisis_clima_agro.png' contiene 3 gráficos:
+   • Gráfico 1: Serie temporal de temperatura
+   • Gráfico 2: Serie temporal de humedad relativa
+   • Gráfico 3: Scatter plot mostrando la correlación inversa
+
+================================================================================
+                            SESIÓN 4 COMPLETADA
+================================================================================
+
+Se ha generado la PROPUESTA DE SOLUCIÓN DIGITAL que incluye:
+
+1. ✅ Cómo usar los datos en un sistema de riego inteligente
+   - 5 formas específicas de aplicación
+   - Algoritmos propuestos
+   - Ahorros estimados (30-40% de agua)
+
+2. ✅ Sensores reales que complementarían la solución
+   - 5 categorías de sensores (atmosféricos, suelo, agua, radiación, cultivo)
+   - Especificaciones técnicas recomendadas
+   - Proveedores y protocolos de comunicación
+
+3. ✅ Estructura y funcionamiento de la app/dashboard
+   - Arquitectura en 4 capas (Adquisición → BD → Backend → Frontend)
+   - 7 funcionalidades principales
+   - 3 escenarios típicos de uso
+   - Stack tecnológico recomendado
+   - ROI positivo esperado en 1-2 temporadas
+
+================================================================================
+ARCHIVOS GENERADOS:
+════════════════════════════════════════════════════════════════════════════
+
+✓ sesion2_crear_tabla_cargar_datos.py
+  → Crea tabla 'lecturas' en PostgreSQL
+  → Carga 4,019 registros del CSV
+
+✓ sesion3_analisis_visualizacion.py
+  → Análisis estadístico descriptivo
+  → Correlación de Pearson (r = -0.6856)
+  → Genera gráficos: analisis_clima_agro.png
+
+✓ sesion4_propuesta_solucion_digital.py
+  → Propuesta completa de sistema inteligente
+  → Respuestas detalladas a todas las preguntas
+
+================================================================================
